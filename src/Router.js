@@ -12,26 +12,26 @@ const Tab = createBottomTabNavigator();
 function Router() {
     return (
         <NavigationContainer>
-            <Tab.Navigator initialRouteName="PostsPage">
+            <Stack.Navigator initialRouteName="PostsPage">
 
-                <Tab.Screen
+                <Stack.Screen
                     name="CommentsPage"
                     component={Comments}
                     options={{
-                        title: "Profilim"
+                        title: "Yorumlar"
                     }}
                 />
 
-                <Tab.Screen
+                <Stack.Screen
                     name="PostsPage"
                     component={Posts}
                     options={{
-                        title: "Sepetim"
+                        title: "Gönderiler"
                     }}
                 />
 
 
-            </Tab.Navigator>
+            </Stack.Navigator>
         </NavigationContainer>
     );
 }

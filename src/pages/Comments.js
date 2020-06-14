@@ -5,7 +5,6 @@ const Comments = props => {
     return (
         <SafeAreaView>
             <Text>Comments</Text>
-            <Button title="Geri" onPress={() => props.navigation.goBack()} />
         </SafeAreaView>
     )
 }
