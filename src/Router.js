@@ -10,10 +10,26 @@ const Stack = createStackNavigator();
 function Router() {
     return (
         <NavigationContainer>
-            <Stack.Navigator>
+            <Stack.Navigator initialRouteName="PostsPage">
 
-                <Stack.Screen name="PostsPage" component={Posts} />
-                <Stack.Screen name="CommentsPage" component={Comments} />
+                <Stack.Screen
+                    name="CommentsPage"
+                    component={Comments}
+                    options={{
+                        headerTitle: "Yorumlar",
+                        headerShown: false,
+                        gestureEnabled: false
+                    }}
+                    />
+
+                <Stack.Screen
+                    name="PostsPage"
+                    component={Posts}
+                    options={{
+                        headerTitle: "Gönderiler",
+                    }}
+                />
+
 
             </Stack.Navigator>
         </NavigationContainer>
