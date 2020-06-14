@@ -2,36 +2,36 @@ import * as React from 'react';
 import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { Posts, Comments } from './pages'
 
 const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
 function Router() {
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="PostsPage">
+            <Tab.Navigator initialRouteName="PostsPage">
 
-                <Stack.Screen
+                <Tab.Screen
                     name="CommentsPage"
                     component={Comments}
                     options={{
-                        headerTitle: "Yorumlar",
-                        headerShown: false,
-                        gestureEnabled: false
+                        title: "Profilim"
                     }}
-                    />
+                />
 
-                <Stack.Screen
+                <Tab.Screen
                     name="PostsPage"
                     component={Posts}
                     options={{
-                        headerTitle: "Gönderiler",
+                        title: "Sepetim"
                     }}
                 />
 
 
-            </Stack.Navigator>
+            </Tab.Navigator>
         </NavigationContainer>
     );
 }
